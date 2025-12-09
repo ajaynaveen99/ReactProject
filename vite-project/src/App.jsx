@@ -1,4 +1,4 @@
-
+import {useState} from "react";
 function Header() {
   return (<>
    <div className="header">
@@ -18,7 +18,7 @@ function Header() {
   
   );
 }
- const restaurants = [
+ let restaurants = [
   {
     "id": 1,
     "name": "Spice Garden",
@@ -132,16 +132,23 @@ function Header() {
 ]
 
 
- 
- 
-
-
 function Body() {
+
+  const [currentRating, setCurrentRating]= useState(restaurants);
+
   return (
+    <>
+    <button className="btn-filter" onClick={()=> {
+      const restra=(currentRating.filter(restro => restro.rating > 4.5))
+      setCurrentRating(restra)}}
+      >Above4.5</button>
     <div className="restroCard-list">
-      {restaurants.map((restro)=>(<ResturantCard  restro={restro}/>))}
+
+      
+
+      {currentRating.map((restroCard)=>(<ResturantCard  restro={restroCard}/>))}
            
-     </div>
+     </div></>
   );
 }
 

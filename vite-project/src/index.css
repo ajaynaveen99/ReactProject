@@ -1,0 +1,37 @@
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 20px;  
+border:1px solid black;
+
+}
+.logo{
+    cursor:pointer;
+}
+.nav-items{
+list-style-type:none;
+display:flex; 
+justify-content:space-around; 
+gap:100px; 
+
+}
+.nav-items li{
+    font-weight:bold;
+    font-size:20px;
+    cursor:pointer;
+}   
+.restroCard{
+    border:1px solid gray;
+    width:200px;
+    padding:2px;
+    margin:5px;
+    text-align:center;
+}
+.restroCard-list{
+    display:flex;
+    flex-wrap: wrap;
+}
+.restroCard:hover{
+ border:3px solid blue;
+}

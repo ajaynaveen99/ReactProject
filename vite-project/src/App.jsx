@@ -1,24 +1,24 @@
-import {useState} from "react";
+import { useState } from "react";
 function Header() {
   return (<>
-   <div className="header">
-    <img className="logo"
-      src="https://i.pinimg.com/1200x/9a/fa/a4/9afaa4a58b2c5e73cdbd7d66c0b2c220.jpg"
-      alt="Logo"
-      width={100}
-      height={100}
-    />
-   <ul className="nav-items">
-      <li>Home</li>
-      <li> About</li>
-      <li>Contact</li>
-      <li>Cart</li></ul>
-      </div>
-    </>
-  
+    <div className="header">
+      <img className="logo"
+        src="https://i.pinimg.com/1200x/9a/fa/a4/9afaa4a58b2c5e73cdbd7d66c0b2c220.jpg"
+        alt="Logo"
+        width={100}
+        height={100}
+      />
+      <ul className="nav-items">
+        <li>Home</li>
+        <li> About</li>
+        <li>Contact</li>
+        <li>Cart</li></ul>
+    </div>
+  </>
+
   );
 }
- let restaurants = [
+let restaurants = [
   {
     "id": 1,
     "name": "Spice Garden",
@@ -134,39 +134,40 @@ function Header() {
 
 function Body() {
 
-  const [currentRating, setCurrentRating]= useState(restaurants);
+  const [currentRating, setCurrentRating] = useState(restaurants);
 
   return (
     <>
-    <button className="btn-filter" onClick={()=> {
-      const restra=(currentRating.filter(restro => restro.rating > 4.5))
-      setCurrentRating(restra)}}
-      >Above4.5</button>
-    <div className="restroCard-list">
+      <button className="btn-filter" onClick={() => {
+        const restra = (currentRating.filter(restro => restro.rating > 4.5))
+        setCurrentRating(restra)
+      }}
+      >Above 4.5-Ratings</button>
+      <div className="restroCard-list">
 
-      
 
-      {currentRating.map((restroCard)=>(<ResturantCard  restro={restroCard}/>))}
-           
-     </div></>
+
+        {currentRating.map((restroCard) => (<ResturantCard restro={restroCard} />))}
+
+      </div></>
   );
 }
 
 function ResturantCard(props) {
 
-  const {name, price, rating, deliveryTime, cuisine, image} =props.restro;
+  const { name, price, rating, deliveryTime, cuisine, image } = props.restro;
   console.log(props);
   console.log(props.restro);
-  return(
+  return (
     <>  <div className="restroCard" >
-     
-    <img src={image} alt="Resturant Image"
-    width={200} height={200} />
-     <h2>{name}</h2>
-    <h3>Price:{price}</h3>
-    <h3>Rating:{rating}</h3>
-    <h3>Delivery Time:{deliveryTime}</h3>
-    <h3>Cuisine: {cuisine}</h3></div>
+
+      <img src={image} alt="Resturant Image"
+        width={200} height={200} />
+      <h2>{name}</h2>
+      <h3>Price:{price}</h3>
+      <h3>Rating:{rating}</h3>
+      <h3>Delivery Time:{deliveryTime}</h3>
+      <h3>Cuisine: {cuisine}</h3></div>
     </>
   );
 }
@@ -174,8 +175,8 @@ function ResturantCard(props) {
 export default function App() {
   return (
     <div>
-    <Header />
-    <Body />
+      <Header />
+      <Body />
     </div>
   );
 }

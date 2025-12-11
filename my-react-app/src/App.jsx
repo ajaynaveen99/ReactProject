@@ -1,14 +1,21 @@
-import { useState } from 'react'
+
+import TodoList from './components/TodoList'
+import TodoSearch from './components/TodoSearch'
+
 import './App.css'
 
 function App() {
-const [count, setIsLoggedIn] = useState(1);
 
-  return (
-    <div>
-{count>0 && <p>you have {count} message{count>1? 's': ''}</p>}
-    </div>
-  );
+
+  return (<> 
+  <div>
+    <div className="card">
+      <form action="">
+        <TodoList />
+     
+      </form>
+    </div> </div>
+  </>);
 }
 
 export default App;

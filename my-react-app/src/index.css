@@ -1,0 +1,64 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.card>form {
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+
+
+}
+
+.list-add {
+    width: 250px;
+
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.btn {
+    width: 50px;
+    height: 36px;
+    margin-left: 10px;
+    margin-top: 20px;
+    color: white;
+    background-color: rgb(68, 102, 48);
+}
+
+.search-input {
+    width: 200px;
+    padding: 10px;
+    margin-left: 300px;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border-collapse: collapse;
+    padding: 20px;
+
+
+}
+
+td {
+    padding-left: 50px;
+}
+
+table {
+    width: 100%;
+}
+
+.discr {
+    padding-left: -20px;
+}
+
+.dlete-edit-btn {
+    display: flex;
+    gap: 5px;
+}

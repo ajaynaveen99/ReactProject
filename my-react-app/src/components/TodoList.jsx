@@ -5,10 +5,19 @@ export default function TodoList() {
     const [inputValue, setInputValue] = useState("");
     const [id, setId] = useState(0);
     const [descript, setDescript] = useState([]);
+    const [editingId, setEditingId] = useState(null);    
+    const [editingValue, setEditingValue] = useState(""); 
+    const [searchValue, setSearchValue] = useState("")
+    const result= descript.filter((element)=> element.description.includes(searchValue)||element.id.toString().includes(searchValue))
+   
+    function handleSearch(event) {
 
-    // --- New state for edit functionality ---
-    const [editingId, setEditingId] = useState(null);    // id of the item currently being edited (null when none)
-    const [editingValue, setEditingValue] = useState(""); // current text in the edit input
+      setSearchValue(event.target.value)
+        console.log(event.target.value)
+       
+        // console.log(descript.filter((element) => element.description.includes(event.target.value)))
+
+    }
 
     return (
         <>
@@ -36,21 +45,22 @@ export default function TodoList() {
                     //  setInputValue("")
                 }}
             >
-                {" "}
-                Add{" "}
+        
+                Add
             </button>
-            <TodoSearch />
+            <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} handleSearch={handleSearch}/>
             <table>
                 <thead>
                     <tr>
                         <th>id</th>
                         <th className="discr">description</th>
                         <th>checkBox</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {descript.map((obj) => (
-                        <tr key={obj.id}>
+                    {result.map((obj) => (
+                        <tr>
                             <td>{obj.id}</td>
 
                             {/* If this row is being edited, show an input bound to editingValue + Save button.
@@ -75,7 +85,7 @@ export default function TodoList() {
                                     checked={obj.isCompleted}
                                     onChange={(e) =>
                                         setDescript(
-                                            descript.map((item) =>
+                                            result.map((item) =>
                                                 item.id === obj.id
                                                     ? { ...item, isCompleted: e.target.checked }
                                                     : item
@@ -92,7 +102,7 @@ export default function TodoList() {
                                         e.preventDefault();
                                         if (obj.isCompleted) {
                                             setDescript(
-                                                descript.filter((deleteObj) => deleteObj.id !== obj.id)
+                                                result.filter((deleteObj) => deleteObj.id !== obj.id)
                                             );
                                             setId((prvId) => prvId - 1);
                                         } else {
@@ -145,7 +155,7 @@ export default function TodoList() {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table> 
         </>
     );
 }

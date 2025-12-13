@@ -1,44 +1,94 @@
-.header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px 20px;  
-border:1px solid black;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid black;
 
 }
-.logo{
-    cursor:pointer;
+
+.logo {
+    cursor: pointer;
 }
-.nav-items{
-list-style-type:none;
-display:flex; 
-justify-content:space-around; 
-gap:100px; 
+
+.nav-items {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
 
 }
-.nav-items li{
-    font-weight:bold;
-    font-size:20px;
-    cursor:pointer;
-}   
-.restroCard{
-    border:1px solid gray;
-    width:200px;
-    padding:2px;
-    margin:5px;
-    text-align:center;
+
+.nav-items li {
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
 }
-.restroCard-list{
-    display:flex;
+
+.restroCard {
+    border: 1px solid gray;
+    width: 200px;
+    padding: 2px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.restroCard-list {
+    display: flex;
     flex-wrap: wrap;
+
+    margin-top: 10px;
+
+
+    gap: 60px;
+    border: 1px solid black;
 }
-.restroCard:hover{
- border:3px solid blue;
+
+.restroCard:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+
 }
-.btn-filter{
-    padding:10px 20px;
-    margin:10px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
+
+.btn-filter {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-left: 1050px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.search-box {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    margin-right: 1px;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.app-light {
+    background-color: #f0f0f0;
+    color: black;
+
+}
+
+.app-green {
+    background-color: lightgreen;
+}
+.btn-theme {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 10px;
 }

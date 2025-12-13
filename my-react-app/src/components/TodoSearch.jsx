@@ -1,4 +1,14 @@
-export default  function TodoSearch() {
-return (<>
-<input type="search" placeholder="search" className="search-input" /></>)
+import { useState } from "react";
+
+export default function TodoSearch({ searchValue, setSearchValue ,handleSearch}) {
+    
+
+
+    return (<>
+
+        <input type="text" placeholder="search" className="search-input"
+            onChange={handleSearch} />
+
+    </>)
+
 }

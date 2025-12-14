@@ -77,12 +77,13 @@
 
 .app-light {
     background-color: #f0f0f0;
-    color: black;
+    color: rgb(8, 8, 8);
 
 }
 
 .app-green {
-    background-color: lightgreen;
+    background-color: rgb(95, 196, 100);
+   
 }
 .btn-theme {
     padding: 10px 20px;

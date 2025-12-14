@@ -1,14 +1,10 @@
 import { useState } from "react";
-
 import Header from "./components/Header.jsx";
 import Body from "./components/Body.jsx";
 
-
-
-
 export default function App() {
   const [buttonLabel, setButtonLabel] = useState("On");
-  const [Class, setClass] = useState("app-light")
+  const [Class, setClass] = useState("app-green");
   return (
     <div className={Class} >
 

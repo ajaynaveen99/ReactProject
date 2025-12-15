@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f1f5f8;
+  color: #102a42;
+}
+
+main {
+  padding: 5rem 0;
+}
+
+.section {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title h2 {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+}
+
+.underline {
+  width: 5rem;
+  height: 0.25rem;
+  background: #c59d5f;
+  margin: 0.5rem auto;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border-color: #c59d5f;
+  color: #c59d5f;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.filter-btn:hover {
+  background: #c59d5f;
+  color: white;
+}
+
+.section-center {
+  display: grid;
+  gap: 2rem;
+}
+
+.menu-item {
+  display: flex;
+  gap: 2rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.photo {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.item-info header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-info h4 {
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: #c59d5f;
+}
+
+.item-text {
+  margin-top: 0.5rem;
+  color: #617d98;
+}

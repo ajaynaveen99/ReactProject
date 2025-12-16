@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Login({ signupData }) {
+export default function Login({ signupData,setHome ,setSignIn}) {
   const [result, setResult] = useState({ email: "", num: "" });
   const [error, setError] = useState({});
 
@@ -33,10 +33,12 @@ export default function Login({ signupData }) {
         result.num === signupData.num
       ) {
         alert("Login successful");
+           setHome(false)
       } else {
         alert("Invalid login details ");
       }
     }
+ 
   }
 
   return (
@@ -55,7 +57,9 @@ export default function Login({ signupData }) {
         {!result.num && <p>{error.num}</p>}
 
 
-        <button onClick={handleLogin}>Login</button>
+        <button   className="signUpBtn" onClick={handleLogin}>Login</button><span>Or</span>
+         <button className="login-btn" onClick={()=>setSignIn(false)}>SignUp</button>
+        
       </form>
     </>
   );

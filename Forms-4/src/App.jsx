@@ -4,18 +4,19 @@ import Login from './components/Login';
 function App() {
   const [signupData, setSignupData] = useState({});
   const [isSignIn, setSignIn] = useState(false);
+  const [isHome ,setHome]=useState(true)
   
- // const [isSignUpPage, setSignUpPage] = useState(true);
+ 
 
-  // function SignUpButton() {
+  function IsHomepage({setHome,signupData}) {
 
-  //   return !isSignUpPage ? <Signup setSignupData={setSignupData} setSignIn={setSignIn} /> : <div><button onClick={() => setSignUpPage(false)}>SignUpPage</button></div>
-  // }
-
+    return (isHome?<Login signupData={signupData} setHome={setHome} setSignIn={setSignIn}/>:<div className="homePage">WellCome to Home Page</div>)
+  
+  }
   return (
     <>
       {isSignIn ?
-        <Login signupData={signupData} /> : <Signup setSignupData={setSignupData} setSignIn={setSignIn} /> 
+        <IsHomepage setHome={setHome} signupData={signupData}/> : <Signup setSignupData={setSignupData} setSignIn={setSignIn} /> 
 
       }
     </>

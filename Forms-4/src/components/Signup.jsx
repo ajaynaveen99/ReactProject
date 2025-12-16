@@ -53,7 +53,7 @@ export default function Signup({ setSignupData,setSignIn}) {
       
         />
         {!result.num &&<p>{error.num}</p>}
-        <button
+        <button  className="signUpBtn"
           onClick={(e) => {
             e.preventDefault();
             const temp = {};
@@ -69,7 +69,8 @@ export default function Signup({ setSignupData,setSignIn}) {
           }}
         >
           SignUp
-        </button>
+        </button> <span>OR</span>
+        <button className="login-btn" onClick={()=>setSignIn(true)}>Login</button>
       </form>
     </>
   );

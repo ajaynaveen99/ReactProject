@@ -39,12 +39,13 @@ p {
   font-size: 13px;
 }
 
-button {
-  width: 100%;
+ .signUpBtn {
+  width: 30%;
   padding: 8px;
   margin-top: 10px;
   background-color: #007bff;
   color: white;
+  margin-left:50px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -53,4 +54,18 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+.login-btn{
+  border:none;
+  color:black;
+  font-size:18px;
+  background-Color:white;
+    /* //margin-left:100px !important; */
+
+}
+
+.homePage{
+   font-size:100px;
+  text-align:center;
+  border:1px solid black;
 }

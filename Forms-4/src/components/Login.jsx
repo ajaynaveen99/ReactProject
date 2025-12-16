@@ -1,106 +1,62 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export default function Login() {
-  const [result, setResult] = useState({ name: '', email: '', onPhone: '' });
-  const [user, setUser] = useState({});
-  const [errors, setErrors] = useState({});
+export default function Login({ signupData }) {
+  const [result, setResult] = useState({ email: "", num: "" });
+  const [error, setError] = useState({});
+
+
+  function inputStyle(field) {
+  return {
+    border: error[field] ? "2px solid red" : "1px solid #aaa",
+  };
+}
+
+
   function handleChange(e) {
     const { name, value } = e.target;
-    console.log(e.target, 'hi');
-    console.log(name, 'hi');
-    console.log(value, 'hi');
     setResult((prev) => ({ ...prev, [name]: value }));
-
-    setErrors((prev) => ({
-      ...prev,
-      [name]: value ? '' : `${labelFor(name)} is required`,
-    }));
-  }
-  function labelFor(field) {
-    if (field === 'onPhone') return 'Phone number';
-    return field.charAt(0).toUpperCase() + field.slice(1);
   }
 
-  function validateAll(data) {
-    const temp = {};
-    if (!data.name) temp.name = 'Name is required';
-    if (!data.email) temp.email = 'Email is required';
-    if (!data.onPhone) temp.onPhone = 'Phone number is required';
-
-    return temp;
-  }
-
-  function handleSubmit(e) {
+  function handleLogin(e) {
     e.preventDefault();
 
-    const tempErrors = validateAll(result);
-    if (Object.keys(tempErrors).length > 0) {
-      setErrors(tempErrors);
-      return;
+    const temp = {};
+    if (!result.email) temp.email = "Email is required";
+    if (!result.num) temp.num = "Phone is required";
+
+    setError(temp);
+
+    if (Object.keys(temp).length === 0) {
+     
+      if (
+        result.email === signupData.email &&
+        result.num === signupData.num
+      ) {
+        alert("Login successful");
+      } else {
+        alert("Invalid login details ");
+      }
     }
-    setUser({ ...result });
-    console.log('saved user:', result);
-    alert('submitted');
   }
 
-  const inputStyle = (field) => ({
-    borderColor: errors[field] ? 'red' : '',
-  });
-
   return (
-    <form>
-      <h2>Form</h2>
+    <>
+      <h2>Login</h2>
 
-      <label>
-        Enter Name :
-        <input
-          name="name"
-          type="text"
-          placeholder="Name"
-          value={result.name}
-          onChange={handleChange}
-          style={inputStyle('name')}
-        />
-      </label>
-      {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
+      <form>
+        <label>Email:</label>
+        <input name="email" value={result.email} onChange={handleChange} style={inputStyle("email")} />
+        {!result.email && <p>{error.email}</p>}
 
-      <br />
+        <br />
 
-      <label>
-        Enter Email :
-        <input
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={result.email}
-          onChange={handleChange}
-          style={inputStyle('email')}
-        />
-      </label>
-      {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
+        <label>Phone:</label>
+        <input name="num" value={result.num} onChange={handleChange}  style={inputStyle("num")}/>
+        {!result.num && <p>{error.num}</p>}
 
-      <br />
 
-      <label>
-        EnterPhoNo :
-        <input
-          name="onPhone"
-          type="number"
-          placeholder="Phone"
-          value={result.onPhone}
-          onChange={handleChange}
-          style={inputStyle('onPhone')}
-        />
-      </label>
-      {errors.onPhone && <p style={{ color: 'red' }}>{errors.onPhone}</p>}
-
-      <button onClick={handleSubmit} type="submit">
-          Login
-      </button>
-      <br/>
-      <br/>
-      <br/>
-    </form>
-  
+        <button onClick={handleLogin}>Login</button>
+      </form>
+    </>
   );
 }

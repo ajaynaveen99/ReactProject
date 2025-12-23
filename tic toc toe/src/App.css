@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #e3e5e9,);
+  color: white;
+}
+
+/* Main container */
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.game {
+  background: #1e1e2f;
+  padding: 25px 35px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Title */
+.game h1 {
+  margin-bottom: 10px;
+}
+
+/* Status text */
+.status {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Score board */
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Board grid */
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 230px;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px auto;
+}
+
+/* Each square */
+.square {
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #f4f4f4;
+  border: none;
+  border-radius: 8px;
+  color: #333;
+}
+
+.square:hover {
+  background: #ddd;
+}
+
+/* Restart button */
+.restart {
+  margin-top: 15px;
+  padding: 8px 16px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #ff9800;
+  color: #000;
+}
+
+.restart:hover {
+  background: #ffa726;
+}

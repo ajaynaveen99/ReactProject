@@ -15,6 +15,7 @@ export default function Login({ signupData,setHome ,setSignIn}) {
   function handleChange(e) {
     const { name, value } = e.target;
     setResult((prev) => ({ ...prev, [name]: value }));
+    setError((prev) => ({ ...prev, [name]: "" }));
   }
 
   function handleLogin(e) {
@@ -57,7 +58,7 @@ export default function Login({ signupData,setHome ,setSignIn}) {
         {!result.num && <p>{error.num}</p>}
 
 
-        <button   className="signUpBtn" onClick={handleLogin}>Login</button><span>Or</span>
+        <button   className="signUpBtn" onClick={handleLogin}>Login</button><br/><br/><span>Dont have an Account</span>
          <button className="login-btn" onClick={()=>setSignIn(false)}>SignUp</button>
         
       </form>

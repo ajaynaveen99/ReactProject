@@ -1,74 +1,67 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Ajay .v",
       "phone": "9876543210",
       "email": "ajay@gmail.com",
       "city": "Hyderabad"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Ravi",
       "phone": "9876543211",
       "email": "ravi@gmail.com",
       "city": "Chennai"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Kiran",
       "phone": "9876543212",
       "email": "kiran@gmail.com",
       "city": "Bangalore"
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "Vijay",
       "phone": "9876543215",
       "email": "vijay@gmail.com",
       "city": "Mumbai"
     },
     {
-      "id": "7",
+      "id": 7,
       "name": "Naveen",
       "phone": "9876543216",
       "email": "naveen@gmail.com",
       "city": "Kochi"
     },
     {
-      "id": "8",
+      "id": 8,
       "name": "Rahul",
       "phone": "9876543217",
       "email": "rahul@gmail.com",
       "city": "Jaipur"
     },
     {
-      "id": "9",
+      "id": 9,
       "name": "Arjun",
       "phone": "9876543218",
       "email": "arjun@gmail.com",
       "city": "Indore"
     },
     {
-      "id": "10",
+      "id": 10,
       "name": "Manoj",
       "phone": "9876543219",
       "email": "manoj@gmail.com",
       "city": "Trichy"
     },
     {
-      "id": "d4c9",
-      "name": "Kushal",
-      "phone": "6303629099",
-      "email": "kushal@gmail.com",
-      "city": "Bangarpete"
-    },
-    {
-      "id": "54f0",
-      "name": "AjayNaveen",
+      "name": "VEERABHADRAPPAGARI AJAY RRMC",
       "phone": "06303629099",
-      "email": "ajay337@gmail.com",
-      "city": "bangalore"
+      "email": "ajaynaveen337@gmail.com",
+      "city": "Bengaluru",
+      "id": 11
     }
   ]
 }

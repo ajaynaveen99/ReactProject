@@ -22,9 +22,9 @@ export default function Signup({ setSignupData,setSignIn}) {
   }
   function validate(){
     const temp = {};
-            if (!result.name) temp.name = 'Name is required';
+            if (!result.name) temp.name = 'Name is required';//!result.name=""/!false=true
             if (!result.email) temp.email = 'Email is required';
-            if (!result.num) temp.num = 'Phone number is required';
+            if (!result.num) temp.num = 'Phone number is required';//{name:name is required,email:emailis requied,Num}
       return temp;
   }
   function handleSubmit(e){

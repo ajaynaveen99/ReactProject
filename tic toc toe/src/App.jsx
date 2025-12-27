@@ -15,7 +15,7 @@ function calculateWinner(board) {
 
   for (let line of lines) {
     const [a, b, c] = line;
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+    if (board[a] && board[a] === board[b] && board[a] === board[c]) {  
       return board[a];
     }
   }
@@ -45,7 +45,6 @@ export default function App() {
   function restartGame() {
     if (winner === "X") setXScore(xScore + 1);
     if (winner === "O") setOScore(oScore + 1);
-
     setBoard(Array(9).fill(null));
     setIsXNext(true);
   }

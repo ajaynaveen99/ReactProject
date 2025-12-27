@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header.jsx";
-import Body from "./components/Body.jsx";
+import {Outlet}from 'react-router-dom'
+
 
 export default function App() {
   const [buttonLabel, setButtonLabel] = useState("On");
@@ -12,7 +13,8 @@ export default function App() {
         setButtonLabel={setButtonLabel}
         Class={Class}
         setClass={setClass} />
-      <Body />
+        <Outlet/>
+     
     </div>
   );
 }

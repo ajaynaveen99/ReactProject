@@ -8,8 +8,8 @@ export default function App() {
   const [product, setProduct] = useState([])
 
   const itemsPerPage = 10;
-  const totalPages = product.length;
-  const perPage = Math.ceil(totalPages / itemsPerPage);//194/10=19.4=20
+  const totalProducts = product.length;
+  const totalPages = Math.ceil(totalProducts / itemsPerPage);//194/10=19.4=20
   const start = (currentPage - 1) * itemsPerPage;
   const end = currentPage * itemsPerPage;//end=start+itemsPerPage
 
@@ -23,11 +23,8 @@ export default function App() {
     return setProduct(json.products);
 
   }
-
-
-  console.log(perPage)
   const pages = [];
-  for (let i = 1; i <= perPage; i++) {
+  for (let i = 1; i <= totalPages; i++) {
     pages.push(i);
   }
   function handleClick(page) {
@@ -36,16 +33,15 @@ export default function App() {
   return (
     <>
       <div><h1>Pagination</h1></div>
-      <div className="pagination-buttons">
-        <button disabled={currentPage == 1} onClick={() => setCurrentPage((prev) => prev - 1)}>Prev</button>
-        {pages.map((page) => <button className={page == currentPage ? "active" : ""} onClick={() => handleClick(page)}>{page}</button>)}
-        <button disabled={currentPage == perPage} onClick={() => setCurrentPage((prev) => prev + 1)}>Next</button>
-      </div>
-
-      <div className="product-container">
+      {/* <div className="product-container">
         {product.slice(start, end).map((p) => <ProductPage key={p.id} img={p.thumbnail} title={p.title} />)}
       </div>
-      {/* <Gallery/> */}
+       <div className="pagination-buttons">
+        <button disabled={currentPage == 1} onClick={() => setCurrentPage((prev) => prev - 1)}>Prev</button>
+        {pages.map((page) => <button className={page == currentPage ? "active" : ""} onClick={() => handleClick(page)}>{page}</button>)}
+        <button disabled={currentPage == totalPages} onClick={() => setCurrentPage((prev) => prev + 1)}>Next</button>
+      </div> */}
+      <Gallery/>
     </>
   )
 }

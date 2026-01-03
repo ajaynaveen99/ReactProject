@@ -15,6 +15,8 @@ function calculateWinner(board) {
 
   for (let line of lines) {
     const [a, b, c] = line;
+    
+    console.log(board[a]&&board[a] ===board[b]&&board[a]===board[c])
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {  
       return board[a];
     }
@@ -23,7 +25,7 @@ function calculateWinner(board) {
 }
 
 export default function App() {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState(Array(9).fill(null));//
   const [isXNext, setIsXNext] = useState(true);
 
   // Score state
@@ -31,9 +33,12 @@ export default function App() {
   const [oScore, setOScore] = useState(0);
 
   const winner = calculateWinner(board);
+  console.log(winner)
 
   function handleClick(index) {
     if (board[index] || winner) return;
+    console.log(board[index],winner)
+
 
     const newBoard = [...board];
     newBoard[index] = isXNext ? "X" : "O";
@@ -73,6 +78,7 @@ export default function App() {
               onClick={() => handleClick(index)}
             >
               {value}
+            
             </button>
           ))}
         </div>
